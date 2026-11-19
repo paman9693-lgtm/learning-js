@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var myinter;
+        function mydata(){
+            document.getElementById("demo1").innerHTML+="happy birthday";
+        }
+        function display(){
+            myinter=setInterval(mydata,1000);
+        }
+        function mystop(){
+            clearInterval(myinter);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="display()">click </button>
+    <button onclick="mystop()">stop!</button>
+    <p id="demo1">Welcome!!!...</p>
+</body>
+</html>
