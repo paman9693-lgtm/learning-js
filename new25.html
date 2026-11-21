@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function display() {
+      const student=[
+        {
+          "App.no":121,
+          "attendence":"raju",
+          "city":"bhopal"
+        }, 
+       {
+          "App.no":122,
+          "attendence":"sanju",
+          "city":"indore"
+        }, 
+      {
+          "App.no":123,
+          "attendence":"monu",
+          "city":"jabalpur"
+        }, 
+      {
+          "App.no":124,
+          "attendence":"ramesh",
+          "city":"satna"
+        }, 
+      {
+          "App.no":125,
+          "attendence":"raju",
+          "city":"bhopal"
+        }
+      ]
+
+    var MyTab=`
+               <table border="1" align="center" width="500" bgcolor="yellow">
+                <tr bgcolor="pink">
+                  <th> App.no </th>
+                  <th>attendence </th>
+                  <th> City </th>
+                </tr>  
+             `
+            student.map(function(myval){   
+              MyTab+=`
+                        <tr>
+                          <td> ${myval.App.no} </td>
+                          <td> ${myval.attendence} </td>
+                          <td> ${myval.city} </td>
+                        </tr>  
+                   `
+            }) 
+            MyTab+="</table>";
+       document.getElementById("demo").innerHTML=MyTab;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="display()">Click here!</button>
+  <p id="demo">welcome...</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dataSet(){
+        
+            localStorage.setItem("name","anuj");
+            localStorage.setItem("class","12");
+            localStorage.setItem("sub","english")
+
+            
+        }
+        function dataGet(){
+            var mynm=localStorage.getItem("name");
+            document.getElementById("demo").innerHTML=mynm;
+        }
+        function dataRemove(){
+            localStorage.removeItem("name");
+            alert("you name Removed!");
+        }
+        function dataAll(){
+            localStorage.clear();
+        }
+    </script>
+</head>
+<body>
+    <button onclick="dataSet()">Set Data</button>
+    <button onclick="dataGet()">Get Data</button>
+    <button onclick="dataRemove()">Remove Data</button>
+    <button onclick="dataAll()">Remove All</button>
+    <h1 id="demo">welcome.....</h1>
+</body>
+</html>

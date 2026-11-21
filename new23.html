@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display(){
+            const city=["bhopal","indore","jabalpur","gwalior"];
+            const city1 = city.map((myval) => {
+                return "<h1>" + myval + "</h1>";
+            });
+            document.getElementById("demo").innerHTML = city1.join("");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="display()">click here!</button>
+    
+    <p id="demo">welcome!</p>
+</body>
+</html>

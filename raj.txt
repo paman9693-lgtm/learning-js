@@ -1,0 +1,3 @@
+High-performance AI workloads demand uninterrupted, secure data movement. Bottlenecks in storage networking or data pipelines leave GPUs idle and costs soaring. F5 solves these challenges with AI storage networking, intelligent data path load balancing, and secure S3-compatible pipelines, keeping infrastructure optimized and AI/ML models on track.
+
+The F5 Application Delivery and Security Platform (ADSP) unifies industry-leading delivery and security in one programmable platform. Leverage multiple deployment models and manage with a single policy across hybrid and multicloud environments.
