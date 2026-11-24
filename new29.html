@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Paragraph Styles</title>
+    <script>
+        function display() {
+            let Obj = document.querySelectorAll("p");
+            console.log(Obj);
+            for (var i = 0; i < Obj.length; i++) {
+                Obj[i].style.color = "red";
+                Obj[i].style.fontWeight = "bold";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="display()">click here!</button>
+    <p>Welcome To Bhopal</p>
+    <p>We learn JS</p>
+    <p>Hello friends we are from Bhopal</p>
+    <p>Welcome to India we are Indians</p>
+</body>
+</html>
