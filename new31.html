@@ -1,17 +1,20 @@
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>JavaScript Export</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
+  <h1 id="demo">Welcome .....</h1>
 
-    <script type="module">
-        import city, {name, age} from './r2.js';
+  <script type="module">
+    import { name, age } from "./r2.js";
+    import mycity from "./r2.js";
 
-        document.write(name + "<br>");
-        document.write(age + "<br>");
-        document.write(city);
-    </script>
-
+    document.getElementById("demo").innerHTML =
+      `I am ${name} my age ${age} i am
+from ${mycity}`;
+  </script>
 </body>
 </html>
