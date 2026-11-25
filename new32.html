@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+
+    <script>
+        function display() {
+            try {
+                var a = prompt("Enter no 1 : ");
+                var b = prompt("Enter no 2 : ");
+
+                if (b == 0) {
+                    throw "You can not Divide by zero!";
+                }
+
+                var c = a / b;
+
+                document.getElementById("demo").innerHTML = "Addition : " + c;
+            }
+            catch (e) {
+                document.getElementById("demo").innerHTML = e;
+            }
+            finally{
+                document.getElementById("demo").innerHTML +="<br>this code always run!!!";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="display()">Click here!</button>
+    <h1 id="demo"></h1>
+</body>
+</html>
