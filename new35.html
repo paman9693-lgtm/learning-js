@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication</title>
+
+    <script>
+        function display() {
+
+            const age = [23, 28, 22, 13, 20, 35, 67, 80, 14];
+
+            const ans = age.map((val) => {
+                return val * 2;
+            });
+
+            document.getElementById("demo").innerHTML =
+            `Array Value : ${age}
+            <br>
+            Multiplication Value : ${ans}`;
+        }
+    </script>
+</head>
+
+<body>
+
+    <button onclick="display()">Click here!</button>
+
+    <h1 id="demo">Answer...</h1>
+
+</body>
+</html>

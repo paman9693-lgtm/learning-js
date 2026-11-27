@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Files Navigation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 40px auto;
+            padding: 24px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        button,
+        a.file-link {
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        button {
+            padding: 10px 18px;
+            font-size: 16px;
+        }
+
+        button:disabled {
+            background: #a8b5c8;
+            cursor: not-allowed;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 8px;
+        }
+
+        a.file-link {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            background: #e9efff;
+            color: #1d4ed8;
+        }
+
+        a.file-link:hover {
+            background: #dbe5ff;
+        }
+
+        #status {
+            min-height: 24px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>All HTML Files</h1>
+
+        <div class="controls">
+            <button id="backButton" type="button">Back</button>
+            <button id="forwardButton" type="button">Forward</button>
+            <button id="nextButton" type="button">Next File</button>
+        </div>
+
+        <p id="status"></p>
+        <ul id="fileList"></ul>
+    </main>
+
+    <script>
+        const files = [
+            "ab.html", "home.html", "house.html", "html_pro.html", "index.html",
+            "new.html", "new1.html", "new2.html", "new3.html", "new4.html",
+            "new5.html", "new6.html", "new7.html", "new8.html", "new9.html",
+            "new10.html", "new11.html", "new12.html", "new13.html", "new14.html",
+            "new15.html", "new16.html", "new17.html", "new18.html", "new19.html",
+            "new20.html", "new21.html", "new22.html", "new23.html", "new24.html",
+            "new25.html", "new26.html", "new27.html", "new28.html", "new29.html",
+            "new30.html", "new31.html", "new32.html", "new33.html", "new34.html",
+            "new35.html", "new40.html"
+        ];
+
+        let currentIndex = files.indexOf("new40.html");
+        const fileList = document.getElementById("fileList");
+        const status = document.getElementById("status");
+        const backButton = document.getElementById("backButton");
+        const forwardButton = document.getElementById("forwardButton");
+        const nextButton = document.getElementById("nextButton");
+
+        files.forEach((file, index) => {
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+
+            link.href = file;
+            link.className = "file-link";
+            link.textContent = file;
+
+            link.addEventListener("click", () => {
+                currentIndex = index;
+                sessionStorage.setItem("htmlFileIndex", String(index));
+            });
+
+            item.appendChild(link);
+            fileList.appendChild(item);
+        });
+
+        const savedIndex = Number(sessionStorage.getItem("htmlFileIndex"));
+        if (Number.isInteger(savedIndex) && savedIndex >= 0 && savedIndex < files.length) {
+            currentIndex = savedIndex;
+        }
+
+        status.textContent = `Current file: ${files[currentIndex]}`;
+
+        backButton.addEventListener("click", () => {
+            history.back();
+        });
+
+        forwardButton.addEventListener("click", () => {
+            history.forward();
+        });
+
+        nextButton.addEventListener("click", () => {
+            const nextIndex = (currentIndex + 1) % files.length;
+            sessionStorage.setItem("htmlFileIndex", String(nextIndex));
+            window.location.href = files[nextIndex];
+        });
+    </script>
+</body>
+</html>
